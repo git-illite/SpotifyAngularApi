@@ -19,7 +19,7 @@ let User;
 
 module.exports.connect = function () {
     return new Promise(function (resolve, reject) {
-        let db = mongoose.createConnection(mongoDBConnectionString, { useUnifiedTopology: true });
+        let db = mongoose.createConnection(mongoDBConnectionString, { useNewUrlParser: true });
 
         db.on('error', err => {
             reject(err);
